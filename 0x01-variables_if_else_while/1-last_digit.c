@@ -4,19 +4,19 @@
 
 /**
  * main - prints the last digit of a number
- * identifies if the last digit is greater than 5, less than 6 or equal to zero
+ * identifies if it is 0, greater than 5, or less than 6 and not 0
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
-
+	
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-/* your code goes there */
+	/* your code goes there */
 
 	if (n % 10 > 5)
 {
@@ -24,7 +24,7 @@ int main(void)
 }
 	else if (n % 10 == 0)
 {
-		printf("Last digit of %d is %d and is zero\n", n, n % 10);
+		printf("Last digit of %d is %d and is 0\n", n, n % 10);
 }
 	else
 {
