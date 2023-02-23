@@ -3,7 +3,8 @@
 /**
  * _isdigit - checks for a digit (0 through 9)
  * @c: varriable
- * Return: 1 if c is a digit
+ *
+ * Return: Always 0 
  */
 
 int _isdigit(int c)
