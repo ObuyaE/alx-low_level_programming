@@ -2,13 +2,14 @@
 
 /**
  * *_strcat - concatenates two strings
- * @dest: destination string
- * @src: source string
+ * @dest: copy to
+ * @src: copy from
  * Return: two concat strings
  */
 char *_strcat(char *dest, char *src)
 {
-	int j, k;
+	int j;
+	int k;
 
 	j = 0;
 	while (dest[j] != '\0')
