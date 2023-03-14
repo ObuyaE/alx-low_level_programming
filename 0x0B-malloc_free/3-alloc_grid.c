@@ -6,34 +6,34 @@
  * @height: height input
  * Return: Always 0 (Success)
  */
+
 int **alloc_grid(int width, int height)
 {
-	int **mee;
-	int x, y;
+	int **s, i, j, k;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
+	s = malloc(height * sizeof(int *));
 
-	mee =  malloc(sizeof(int *) * height);
-
-	if (mee == NULL)
+	if (s == NULL)
 		return (NULL);
 
-	for (x = 0; x < height; x++)
+	for (i = 0; i < height; i++)
 	{
-		mee[x] = malloc(sizeof(int) * width);
-
-		if (mee[x] == NULL)
+		s[i] = malloc(width * sizeof(int));
+		if (s[i] == NULL)
 		{
-			for (; x >= 0; x--)
-				free(mee[x]);
+			for (k = 0; k <= i; k++)
+			{
+				free(s[k]);
+			}
+			free(s);
 			return (NULL);
 		}
+		for (j = 0; j < width; j++)
+		{
+			s[i][j] = 0;
+		}
 	}
-	for (x = 0; x < height; x++)
-	{
-		for (y = 0; y < width; y++)
-			mee[x][y] = 0;
-	}
-	return (mee);
+	return (s);
 }
